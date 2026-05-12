@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/yohan/OneDrive/Desktop/online-food-store/food-store/src/app/page.tsx"],"sourcesContent":["import React from 'react';\nimport FoodCard from '../component/item/FoodCard';\n\nexport default function Home() {\n  return (\n    <>\n    <h1>Welcome to the Online Food Store</h1>\n    <p>Explore our wide range of delicious food items and order online for a convenient and tasty experience.</p>\n    \n    </>\n  );\n}\n"],"names":["Home"],"mappings":";;;;;;AAGe,SAASA;IACtB,qBACE;;0BACA,0RAAC;0BAAG;;;;;;0BACJ,0RAAC;0BAAE;;;;;;;;AAIP"}}]
+}

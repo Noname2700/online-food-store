@@ -13,3 +13,4 @@ export interface ItemDetailProps {
 export interface FoodCardListProps {
   foodItems: FoodItem[];
 }
+

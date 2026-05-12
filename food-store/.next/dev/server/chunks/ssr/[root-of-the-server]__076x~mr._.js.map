@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/yohan/OneDrive/Desktop/online-food-store/food-store/src/component/item/FoodCard.tsx"],"sourcesContent":["import AddToCartButton from \"./AddToCartButton\";\r\n\r\nfunction FoodCard() {\r\n  return (\r\n    <div className=\"food-card\">\r\n      <h2>Food Item Name</h2>\r\n      <p>Description of the food item.</p>\r\n      <p>Price: $9.99</p>\r\n      <button>Add to Cart</button>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default FoodCard;\r\n"],"names":["FoodCard","className"],"mappings":";;;;;;AAEA,SAASA;IACP,qBACE,0RAAC;QAAIC,WAAU;;0BACb,0RAAC;0BAAG;;;;;;0BACJ,0RAAC;0BAAE;;;;;;0BACH,0RAAC;0BAAE;;;;;;0BACH,0RAAC;0BAAO;;;;;;;;;;;;AAGd;uCAEeD"}},
+    {"offset": {"line": 60, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/yohan/OneDrive/Desktop/online-food-store/food-store/src/app/page.tsx"],"sourcesContent":["import React from 'react';\nimport FoodCard from '../component/item/FoodCard';\n\nexport default function Home() {\n  return (\n    <>\n    <h1>Welcome to the Online Food Store</h1>\n    <p>Explore our wide range of delicious food items and order online for a convenient and tasty experience.</p>\n    <FoodCard />\n    </>\n  );\n}\n"],"names":["Home"],"mappings":";;;;;AACA;;;AAEe,SAASA;IACtB,qBACE;;0BACA,0RAAC;0BAAG;;;;;;0BACJ,0RAAC;0BAAE;;;;;;0BACH,0RAAC,4LAAQ;;;;;;;AAGb"}}]
+}
