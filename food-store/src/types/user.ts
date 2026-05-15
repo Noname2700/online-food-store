@@ -6,7 +6,7 @@ export interface User {
     createdAt: Date;
 }
 
-export interface UserSignUpInput {
+export interface UserRegisterInput {
     name: string;
     email: string;
     password: string;
