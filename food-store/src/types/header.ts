@@ -3,8 +3,8 @@ export interface HeaderProps {
     cartItemCount?: number;
     onSearchClick?: () => void;
     onCartClick?: () => void;   
-    link?: HeaderLink[];
-    rigtslot?: React.ReactNode;
+    links?: HeaderLink[];
+    rightSlot?: React.ReactNode;
 }
 
 export interface HeaderLink {

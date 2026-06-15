@@ -15,7 +15,7 @@ function LoginModal() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>)=>{
+  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>)=>{
     e.preventDefault();
     // Handle form submission logic here, such as validation and API calls
     console.log("Form submitted:", formData);
