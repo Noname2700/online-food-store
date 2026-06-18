@@ -1,8 +1,16 @@
-import React, { useState, ChangeEvent,} from "react";
+import React, { useState, ChangeEvent, useRef } from "react";
 import { UserRegisterInput } from "@/src/types/user";
+import { useHandleClose } from "@/src/lib/hooks/useHandleClose";
 
+interface RegisterModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
 
-function RegisterModal() {
+function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
+  const overlayRef = useRef<HTMLDivElement>(null);
+  useHandleClose(isOpen, onClose, overlayRef);
+
   const [formData, setFormData] = useState<UserRegisterInput>({
     name: "",
     email: "",
@@ -18,18 +26,17 @@ function RegisterModal() {
     }));
   };
 
-  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission logic here, such as validation and API calls
     console.log("Form submitted:", formData);
   };
 
+  if (!isOpen) return null;
+
   return (
-    <div>
-      <form  method="post" onSubmit={handleSubmit}>
-        {" "}
+    <div ref={overlayRef}>
+      <form method="post" onSubmit={handleSubmit}>
         <label htmlFor="name">
-          {" "}
           Name
           <input
             type="text"
@@ -40,7 +47,7 @@ function RegisterModal() {
           />
         </label>
         <label htmlFor="email">
-          Email{" "}
+          Email
           <input
             type="email"
             name="email"
