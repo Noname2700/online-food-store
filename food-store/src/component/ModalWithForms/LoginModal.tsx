@@ -15,16 +15,19 @@ function LoginModal({ isOpen, onClose }: LoginModalProps) {
     password: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = e.target;
+  const handleChange = (e: unknown) => {
+    const event = e as Event & { target: HTMLInputElement };
+
+    const { name, value, type, checked } = event.target;
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = (e: unknown) => {
+    const event = e as SubmitEvent;
+    event.preventDefault();
     console.log("Form submitted:", formData);
   };
 

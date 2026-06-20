@@ -18,18 +18,21 @@ function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
     confirmPassword: "",
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = e.target;
+  const handleChange = (e: unknown) => {
+    const event = e as Event & { target: HTMLInputElement };
+
+    const { name, value, type, checked } = event.target;
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = (e: any) => {
+    const event = e as SubmitEvent;
+    event.preventDefault();
     console.log("Form submitted:", formData);
-  };
+  }
 
   if (!isOpen) return null;
 
@@ -43,7 +46,7 @@ function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Enter a your name"
+            placeholder="Enter your name"
           />
         </label>
         <label htmlFor="email">

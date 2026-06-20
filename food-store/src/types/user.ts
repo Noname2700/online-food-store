@@ -6,6 +6,12 @@ export interface User {
     createdAt: Date;
 }
 
+export interface PublicUser {
+    id: string;
+    name: string;
+}
+
+
 export interface UserRegisterInput {
     name: string;
     email: string;
