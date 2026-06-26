@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../component/layout/Header";
 import FoodCardList from "../component/item/FoodCardList";
 import { useState } from "react";
 
@@ -88,6 +89,16 @@ export default function Home() {
         Explore our wide range of delicious food items and order online for a
         convenient and tasty experience.
       </p>
+      <Header onSignUpClick={() => {
+        setErrorMessage("");
+        setActiveModal("register");
+      }}
+      
+      onSignInClick={() => {
+        setErrorMessage("");
+        setActiveModal("login");
+      }}
+      />
       <FoodCardList foodItems={[]} />
     </>
   );

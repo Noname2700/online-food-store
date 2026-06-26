@@ -2,6 +2,7 @@ export interface HeaderProps {
     title?: string;
     cartItemCount?: number;
     onSignUpClick?: () => void;
+    onSignInClick?: () => void;
     onSearchClick?: () => void;
     onCartClick?: () => void;   
     links?: HeaderLink[];

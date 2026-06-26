@@ -28,7 +28,7 @@ function Header(headerProps: HeaderProps) {
         <>
           <button onClick={headerProps.onSignUpClick}>
             <span>{user.name}</span>
-            <span>Sign Out</span>
+            <span>Log Out</span>
           </button>
         </>
       ) : (
