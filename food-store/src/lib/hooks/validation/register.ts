@@ -1,10 +1,11 @@
+
 import { UserRegisterInput } from "@/src/types/user";
 
 const validateRegister = (values: UserRegisterInput) => {
     const errors: Partial<Record<keyof UserRegisterInput, string>> = {};
 
-    if (!values.name || values.name.trim().length < 3) {
-      errors.name = "Name must be at least 3 characters.";
+    if (!values.name || values.name.trim().length < 2) {
+      errors.name = "Name must be at least 2 characters.";
     }
 
     if (!values.email) {

@@ -15,6 +15,7 @@ export function useHandleClose(
     };
 
     const handleOverlayClick = (e: MouseEvent) => {
+      if(!overlayRef.current) return;
       if (e.target === overlayRef.current) {
         onClose();
       }
