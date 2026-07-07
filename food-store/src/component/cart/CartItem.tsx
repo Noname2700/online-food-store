@@ -4,7 +4,7 @@ import RemoveItemCartButton from "../item/RemoveItemCartButton";
 function CartItem() {
 
 const [cartItem, setCartItem] = useState([
-    { id: "1", name: "Pizza" }
+    { id: "1", name: "Sancocho" }
 ]);
 
  const hanldeRemove = (id: string) => {

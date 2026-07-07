@@ -16,7 +16,7 @@ export interface UserRegisterInput {
     name: string;
     email: string;
     password: string;
-    confirmPassword: string;
+    confirmpassword: string;
 }
 
 export interface UserLoginInput {

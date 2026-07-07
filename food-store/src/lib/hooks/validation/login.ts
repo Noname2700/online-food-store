@@ -1,22 +1,16 @@
-import { UserLoginInput } from "@/src/types/user";
+import { z } from "zod";
+import { UserLoginSchema } from "@/src/schemas/userLoginSchemas"
 
-const validateLogin = (values: UserLoginInput) => {
-  const errors: Partial<Record<keyof UserLoginInput, string>> = {};
+export const validateLogin = (values: z.infer<typeof UserLoginSchema>) => {
+  const errors: Record<string, string> = {};
+  const result = UserLoginSchema.safeParse(values);
 
-  if (!values.email) {
-    errors.email = "Email is required.";
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-    errors.email = "Invalid email address.";
-  }
-
-  if (!values.password || values.password.length < 6) {
-    errors.password = "Password must be at least 6 characters.";
-  } else if (!/[A-Z]/.test(values.password) || !/[0-9]/.test(values.password)) {
-    errors.password =
-      "Password must contain at least one uppercase letter and one number.";
+  if(!result.success) {
+    for (const issue of result.error.issues) {
+      errors[issue.path[0] as string] = issue.message;
+    }
   }
 
   return errors;
 };
 
-export default validateLogin;

@@ -3,7 +3,7 @@ import { UserRegisterInput } from "@/src/types/user";
 import { useHandleClose } from "@/src/lib/hooks/useHandleClose";
 import { useForm } from "@/src/lib/hooks/useForm";
 import ModalWithForm from "@/src/component/ModalWithForms/ModalWithForm";
-import validateRegister from "@/src/lib/hooks/validation/register";
+import { validateRegister } from "@/src/lib/hooks/validation/register";
 
 interface RegisterModalProps {
   isOpen: boolean;
@@ -23,14 +23,15 @@ function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
     isValid,
     touched,
     dirty,
-  } = useForm<UserRegisterInput>({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  }, validateRegister);
-
- 
+  } = useForm<UserRegisterInput>(
+    {
+      name: "",
+      email: "",
+      password: "",
+      confirmpassword: "",
+    },
+    validateRegister,
+  );
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -95,20 +96,20 @@ function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
           <span className="text-red-500 font-bold">{error.password}</span>
         )}
       </label>
-      <label htmlFor="confirmPassword">
+      <label htmlFor="confirmpassword">
         Confirm Password
         <input
           type="password"
-          name="confirmPassword"
-          value={formData.confirmPassword}
+          name="confirmpassword"
+          value={formData.confirmpassword}
           onChange={handleChange}
           onBlur={handleBlur}
           placeholder="Confirm your password"
           required
         />{" "}
-        {error.confirmPassword && touched.confirmPassword && (
+        {error.confirmpassword && touched.confirmpassword && (
           <span className="text-red-500 font-bold">
-            {error.confirmPassword}
+            {error.confirmpassword}
           </span>
         )}
       </label>
