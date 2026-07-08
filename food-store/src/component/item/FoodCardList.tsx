@@ -1,6 +1,6 @@
 import FoodCard from "./FoodCard";
 import { useState } from "react";
-import { FoodCardListProps } from "../../types/food";
+import { FoodCardListProps } from "../../types/FoodItem";
 
 function FoodCardList({ foodItems }: FoodCardListProps) {
   const [visibleCards, setVisibleCards] = useState(6);

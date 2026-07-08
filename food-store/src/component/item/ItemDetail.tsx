@@ -1,5 +1,4 @@
-import { ItemDetailProps } from "../../types/food";
-
+import { ItemDetailProps } from "../../types/FoodItem";
 
 function ItemDetail({ foodItem }: ItemDetailProps) {
   return (
@@ -9,7 +8,9 @@ function ItemDetail({ foodItem }: ItemDetailProps) {
       <p>Name: {foodItem.name}</p>
       <p>Price: ${foodItem.price}</p>
       <p>Description: {foodItem.description}</p>
-      <p><img src={foodItem.imageUrl} alt={foodItem.name} /></p>
+      <p>
+        <img src={foodItem.imageUrl} alt={foodItem.name} />
+      </p>
     </div>
   );
 }

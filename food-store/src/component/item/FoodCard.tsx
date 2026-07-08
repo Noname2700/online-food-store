@@ -1,7 +1,7 @@
 import AddToCartButton from "./AddToCartButton";
-import { FoodItem} from "../../types/food";
+import { FoodItem } from "../../types/FoodItem";
 
-function FoodCard({ name, price, description, imageUrl}: FoodItem) {
+function FoodCard({ name, price, description, imageUrl }: FoodItem) {
   return (
     <div className="food-card">
       <h2>{name}</h2>

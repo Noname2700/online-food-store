@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
-import { HeaderProps } from "../../types/header";
+import { HeaderProps } from "../../types/Header";
 import { UserContext } from "@/src/lib/context/UserContext";
 import { useContext } from "react";
 

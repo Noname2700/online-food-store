@@ -1,9 +1,10 @@
 import { useForm } from "@/src/lib/hooks/useForm";
 import { useEffect, useRef } from "react";
-import { UserLoginInput } from "@/src/types/user";
+import { z } from "zod";
 import { useHandleClose } from "@/src/lib/hooks/useHandleClose";
 import ModalWithForm from "@/src/component/ModalWithForms/ModalWithForm";
-import validateLogin from "@/src/lib/hooks/validation/login";
+import { validateLogin } from "@/src/lib/hooks/validation/loginValidation";
+import { UserLoginSchema } from "@/src/schemas/userLoginSchemas";
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -23,7 +24,7 @@ function LoginModal({ isOpen, onClose }: LoginModalProps) {
     isValid,
     touched,
     dirty,
-  } = useForm<UserLoginInput>({
+  } = useForm<z.infer<typeof UserLoginSchema>>({
     email: "",
     password: "",
   }, validateLogin);

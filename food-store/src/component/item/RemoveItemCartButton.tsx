@@ -1,4 +1,4 @@
-import { RemoveItemCartButtonProps } from "@/src/types/cartItem";
+import { RemoveItemCartButtonProps } from "@/src/types/CartItem";
 
 function RemoveItemCartButton({ itemId, onRemove }: RemoveItemCartButtonProps) {
   const handleClickRemove = () => {

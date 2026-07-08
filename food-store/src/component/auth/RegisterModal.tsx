@@ -1,9 +1,10 @@
 import { useEffect, useRef } from "react";
-import { UserRegisterInput } from "@/src/types/user";
 import { useHandleClose } from "@/src/lib/hooks/useHandleClose";
 import { useForm } from "@/src/lib/hooks/useForm";
 import ModalWithForm from "@/src/component/ModalWithForms/ModalWithForm";
-import { validateRegister } from "@/src/lib/hooks/validation/register";
+import { validateRegister } from "@/src/lib/hooks/validation/registerValidation";
+import { UserRegisterSchema } from "@/src/schemas/userRegisterSchemas";
+import { z } from "zod";
 
 interface RegisterModalProps {
   isOpen: boolean;
@@ -23,7 +24,7 @@ function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
     isValid,
     touched,
     dirty,
-  } = useForm<UserRegisterInput>(
+  } = useForm<z.infer<typeof UserRegisterSchema>>(
     {
       name: "",
       email: "",

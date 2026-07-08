@@ -1,6 +1,10 @@
-interface CartItem {
+export interface CartItem {
     id: string;
+    foodId: string;
     name: string;
+    quantity: number;
+    price: number;
+    
 }
 
 export interface RemoveItemCartButtonProps {
@@ -9,4 +13,3 @@ export interface RemoveItemCartButtonProps {
 }
 
 
-export default CartItem;
