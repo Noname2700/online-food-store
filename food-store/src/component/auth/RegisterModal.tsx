@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef } from "react";
 import { useHandleClose } from "@/src/lib/hooks/useHandleClose";
 import { useForm } from "@/src/lib/hooks/useForm";
@@ -29,7 +30,7 @@ function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
       name: "",
       email: "",
       password: "",
-      confirmpassword: "",
+      confirmPassword: "",
     },
     validateRegister,
   );
@@ -97,20 +98,20 @@ function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
           <span className="text-red-500 font-bold">{error.password}</span>
         )}
       </label>
-      <label htmlFor="confirmpassword">
+      <label htmlFor="confirmPassword">
         Confirm Password
         <input
           type="password"
-          name="confirmpassword"
-          value={formData.confirmpassword}
+          name="confirmPassword"
+          value={formData.confirmPassword}
           onChange={handleChange}
           onBlur={handleBlur}
           placeholder="Confirm your password"
           required
         />{" "}
-        {error.confirmpassword && touched.confirmpassword && (
+        {error.confirmPassword && touched.confirmPassword && (
           <span className="text-red-500 font-bold">
-            {error.confirmpassword}
+            {error.confirmPassword}
           </span>
         )}
       </label>

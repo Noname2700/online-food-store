@@ -1,3 +1,4 @@
+"use client";
 import { useForm } from "@/src/lib/hooks/useForm";
 import { useEffect, useRef } from "react";
 import { z } from "zod";

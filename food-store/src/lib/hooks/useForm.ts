@@ -1,7 +1,7 @@
 
 import { useState, ChangeEvent, useCallback, useRef } from "react";
 
-export function useForm<T extends object>(
+export function useForm<T extends Record<string, string>>(
   initialValues: T,
   validate?: (values: T) => Partial<Record<keyof T, string>>,
 ) {

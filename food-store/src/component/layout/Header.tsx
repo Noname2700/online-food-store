@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
 import { HeaderProps } from "../../types/Header";
@@ -7,7 +8,7 @@ import { useContext } from "react";
 function Header(headerProps: HeaderProps) {
   const userContext = useContext(UserContext);
   const user = userContext?.user;
-  if (!user) return null;
+
 
   return (
     <header className="bg-gray-800 text-white p-4">
